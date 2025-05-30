@@ -1,27 +1,30 @@
 # Core Libraries
-pandas>=2.2.0
-numpy>=1.26.0
-scikit-learn>=1.3.0
-joblib>=1.3.0
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.6.1
+joblib==1.4.0
 
 # Streamlit App
-streamlit==1.34.0
-plotly==5.21.0
+streamlit>=1.30.0
+plotly>=5.18.0
 
 # NLP Models & Transformers
-transformers==4.41.1
-sentence-transformers==2.6.1
-bertopic==0.16.0
-faiss-cpu==1.11.0
+transformers>=4.36.0
+sentence-transformers>=2.2.0
+bertopic>=0.16.0
 
 # Sentiment & Text Processing
-textblob==0.18.0
-nltk==3.8.1
+textblob>=0.17.1
+nltk>=3.8.1
 
-# GPT Agent + LangChain
-openai==1.30.3
-langchain==0.1.20
-tiktoken==0.6.0
+# Google AI and LangChain
+google-generativeai>=0.3.2
+python-dotenv==1.0.1
+
+# HTML & PDF Generation
+jinja2==3.1.4
+weasyprint==65.1
+pdfkit==1.0.0
 
 # HTML & PDF Reporting
 jinja2==3.1.4
