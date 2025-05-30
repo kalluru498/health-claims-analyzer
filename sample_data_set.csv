@@ -1,0 +1,260 @@
+claim_id,comment,category,specialty,insurance_type,cpt_code,amount_expected,amount_paid
+1001,Denied due to missing documentation or unmet policy criteria for CPT 93306.,Denied - Policy Not Met,Pediatrics,Plan C,93306,154.44,21.91
+1002,"Patient was charged a copay, but it should not apply. CPT code: 11721.",Copay Dispute,General Practice,Secondary Plan B,11721,243.37,234.78
+1003,No payment received. Please verify if check was issued.,Payment Missing,Internal Medicine,Secondary Plan B,99214,134.9,100.34
+1004,Denied due to missing documentation or unmet policy criteria for CPT 99213.,Denied - Policy Not Met,Cardiology,Secondary Plan B,99213,161.24,60.89
+1005,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Cardiology,Secondary Plan B,20550,157.51,16.14
+1006,"Patient was charged a copay, but it should not apply. CPT code: 99213.",Copay Dispute,Cardiology,Plan C,99213,155.88,111.91
+1007,No payment received. Please verify if check was issued.,Payment Missing,Internal Medicine,Plan C,99214,149.79,19.45
+1008,Claim paid lower than expected for CPT 11721. Please reprocess with updated rate.,Underpayment,Internal Medicine,Secondary Plan B,11721,228.04,208.29
+1009,Claim paid lower than expected for CPT 99214. Please reprocess with updated rate.,Underpayment,Orthopedics,Secondary Plan B,99214,215.31,202.92
+1010,Claim denied due to coordination of benefits. Patient listed Secondary Plan B as primary.,COB Issue,Dermatology,Secondary Plan B,20550,160.94,52.48
+1011,Claim paid lower than expected for CPT 99213. Please reprocess with updated rate.,Underpayment,Internal Medicine,Plan C,99213,225.64,18.75
+1012,No payment received. Please verify if check was issued.,Payment Missing,Pediatrics,Plan C,99213,145.14,52.59
+1013,"Patient was charged a copay, but it should not apply. CPT code: 20550.",Copay Dispute,Dermatology,Plan C,20550,173.9,17.75
+1014,Claim paid lower than expected for CPT 99214. Please reprocess with updated rate.,Underpayment,Orthopedics,Plan C,99214,214.91,97.99
+1015,"Patient was charged a copay, but it should not apply. CPT code: 99203.",Copay Dispute,Internal Medicine,Primary Plan A,99203,110.71,17.54
+1016,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Pediatrics,Secondary Plan B,99214,105.24,48.02
+1017,"Patient was charged a copay, but it should not apply. CPT code: 99213.",Copay Dispute,Internal Medicine,Secondary Plan B,99213,145,36.52
+1018,Claim paid lower than expected for CPT 99203. Please reprocess with updated rate.,Underpayment,General Practice,Secondary Plan B,99203,244.69,208.16
+1019,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Orthopedics,Plan C,11721,186.83,151.52
+1020,No payment received. Please verify if check was issued.,Payment Missing,Orthopedics,Primary Plan A,93306,170.5,120.52
+1021,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Orthopedics,Primary Plan A,99213,129.01,48.48
+1022,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Pediatrics,Secondary Plan B,20550,242.66,155.79
+1023,"Patient was charged a copay, but it should not apply. CPT code: 11721.",Copay Dispute,Internal Medicine,Plan C,11721,97.47,46.78
+1024,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Internal Medicine,Primary Plan A,20550,240.43,76.1
+1025,No payment received. Please verify if check was issued.,Payment Missing,Dermatology,Secondary Plan B,99203,123.35,87.64
+1026,Claim paid lower than expected for CPT 99203. Please reprocess with updated rate.,Underpayment,Dermatology,Primary Plan A,99203,245.54,80.29
+1027,Denied due to missing documentation or unmet policy criteria for CPT 99213.,Denied - Policy Not Met,Pediatrics,Plan C,99213,212.11,178.37
+1028,No payment received. Please verify if check was issued.,Payment Missing,Internal Medicine,Primary Plan A,93306,170.86,87.96
+1029,Claim paid lower than expected for CPT 99214. Please reprocess with updated rate.,Underpayment,Internal Medicine,Plan C,99214,216.59,13.03
+1030,Claim paid lower than expected for CPT 99214. Please reprocess with updated rate.,Underpayment,Dermatology,Primary Plan A,99214,224.62,223.35
+1031,"Patient was charged a copay, but it should not apply. CPT code: 99203.",Copay Dispute,Pediatrics,Plan C,99203,189.23,164.53
+1032,Denied due to missing documentation or unmet policy criteria for CPT 99213.,Denied - Policy Not Met,Orthopedics,Secondary Plan B,99213,90.45,24.55
+1033,"Patient was charged a copay, but it should not apply. CPT code: 99203.",Copay Dispute,Pediatrics,Primary Plan A,99203,180.79,35.76
+1034,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,General Practice,Secondary Plan B,99213,236.95,34.15
+1035,"Patient was charged a copay, but it should not apply. CPT code: 99213.",Copay Dispute,Orthopedics,Primary Plan A,99213,229.64,106.71
+1036,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Pediatrics,Plan C,99213,185.89,54.24
+1037,Claim denied due to coordination of benefits. Patient listed Secondary Plan B as primary.,COB Issue,Orthopedics,Secondary Plan B,20550,199.18,152.62
+1038,"Patient was charged a copay, but it should not apply. CPT code: 20550.",Copay Dispute,Orthopedics,Primary Plan A,20550,235.48,152.56
+1039,Denied due to missing documentation or unmet policy criteria for CPT 11721.,Denied - Policy Not Met,Internal Medicine,Plan C,11721,156.83,106.26
+1040,Denied due to missing documentation or unmet policy criteria for CPT 99214.,Denied - Policy Not Met,Pediatrics,Plan C,99214,134.75,70.13
+1041,No payment received. Please verify if check was issued.,Payment Missing,Cardiology,Secondary Plan B,11721,139.75,125.37
+1042,Claim paid lower than expected for CPT 11721. Please reprocess with updated rate.,Underpayment,Pediatrics,Plan C,11721,208.59,56.63
+1043,No payment received. Please verify if check was issued.,Payment Missing,Pediatrics,Primary Plan A,99213,227.79,199.03
+1044,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Internal Medicine,Primary Plan A,11721,239.63,213.32
+1045,"Patient was charged a copay, but it should not apply. CPT code: 11721.",Copay Dispute,Cardiology,Primary Plan A,11721,196.9,105.71
+1046,No payment received. Please verify if check was issued.,Payment Missing,Internal Medicine,Secondary Plan B,93306,164.27,119.43
+1047,Claim appears to be denied as duplicate. Please review and confirm.,Duplicate Denial,Orthopedics,Secondary Plan B,99213,98.77,22.66
+1048,Denied due to missing documentation or unmet policy criteria for CPT 99214.,Denied - Policy Not Met,Orthopedics,Plan C,99214,246.87,199.68
+1049,Claim denied due to coordination of benefits. Patient listed Primary Plan A as primary.,COB Issue,Pediatrics,Primary Plan A,99213,151.61,136.78
+1340,Excellent service and claim resolution.,Completed,Internal Medicine,Primary Plan A,99214,189.49,189.49
+1341,Insurance covered full amount. Great support.,Completed,General Practice,Plan C,93306,122.19,122.19
+1342,Paid in full. Appreciate the prompt settlement.,Completed,Internal Medicine,Plan C,99203,164.9,164.9
+1343,Claim processed and paid completely. Thank you.,Completed,Pediatrics,Secondary Plan B,99203,124.65,124.65
+1344,Everything matched. Patient happy with service.,Completed,Internal Medicine,Plan C,99214,162.3,162.3
+1345,Everything matched. Patient happy with service.,Completed,Dermatology,Plan C,93306,160.22,160.22
+1346,Excellent service and claim resolution.,Completed,General Practice,Plan C,99214,179.16,179.16
+1347,Confirming claim settled with no issues.,Completed,General Practice,Primary Plan A,99203,130.95,130.95
+1348,Excellent service and claim resolution.,Completed,Cardiology,Plan C,11721,233.44,233.44
+1349,Excellent service and claim resolution.,Completed,Cardiology,Primary Plan A,20550,142.98,142.98
+1350,Claim processed successfully. No issues found.,Completed,Internal Medicine,Plan C,99203,183.34,183.34
+1351,Paid in full. Appreciate the prompt settlement.,Completed,Orthopedics,Secondary Plan B,93306,103.83,103.83
+1352,Confirming claim settled with no issues.,Completed,Internal Medicine,Primary Plan A,99214,247.57,247.57
+1353,Payment and documents verified. No errors.,Completed,Dermatology,Plan C,93306,115.59,115.59
+1354,Confirming claim settled with no issues.,Completed,Dermatology,Primary Plan A,99214,107.39,107.39
+1355,Claim processed and paid completely. Thank you.,Completed,General Practice,Primary Plan A,93306,127.74,127.74
+1356,Paid in full. Appreciate the prompt settlement.,Completed,Pediatrics,Primary Plan A,20550,234.01,234.01
+1357,Payment and documents verified. No errors.,Completed,General Practice,Primary Plan A,99203,149.98,149.98
+1358,Paid in full. Appreciate the prompt settlement.,Completed,Orthopedics,Secondary Plan B,99203,233.5,233.5
+1359,Claim processed successfully. No issues found.,Completed,Dermatology,Secondary Plan B,99214,125.28,125.28
+1360,Claim processed and paid completely. Thank you.,Completed,Orthopedics,Primary Plan A,99214,152.97,152.97
+1361,Insurance covered full amount. Great support.,Completed,Internal Medicine,Plan C,93306,135.83,135.83
+1362,No discrepancies noted. All looks good.,Completed,Dermatology,Secondary Plan B,11721,108.24,108.24
+1363,No discrepancies noted. All looks good.,Completed,Internal Medicine,Primary Plan A,99214,177.55,177.55
+1364,Claim processed successfully. No issues found.,Completed,Cardiology,Secondary Plan B,99214,156.66,156.66
+1365,Insurance covered full amount. Great support.,Completed,Pediatrics,Secondary Plan B,99203,118.33,118.33
+1366,Excellent service and claim resolution.,Completed,Internal Medicine,Secondary Plan B,20550,240.55,240.55
+1367,Insurance covered full amount. Great support.,Completed,Internal Medicine,Primary Plan A,20550,202.76,202.76
+1368,Confirming claim settled with no issues.,Completed,Orthopedics,Secondary Plan B,99214,189.3,189.3
+1369,Paid in full. Appreciate the prompt settlement.,Completed,Dermatology,Plan C,99214,236.62,236.62
+1370,Claim processed and paid completely. Thank you.,Completed,Orthopedics,Secondary Plan B,99214,116.81,116.81
+1371,No discrepancies noted. All looks good.,Completed,Pediatrics,Primary Plan A,99214,103.04,103.04
+1372,Confirming claim settled with no issues.,Completed,Cardiology,Secondary Plan B,93306,105.06,105.06
+1373,Claim processed and paid completely. Thank you.,Completed,Pediatrics,Plan C,20550,243.87,243.87
+1374,Excellent service and claim resolution.,Completed,Cardiology,Primary Plan A,99203,169.99,169.99
+1375,Excellent service and claim resolution.,Completed,Pediatrics,Plan C,99214,130.34,130.34
+1376,Everything matched. Patient happy with service.,Completed,Pediatrics,Primary Plan A,11721,113.4,113.4
+1377,No discrepancies noted. All looks good.,Completed,Internal Medicine,Plan C,99214,170.23,170.23
+1378,Thank you! Payment received as expected.,Completed,Dermatology,Plan C,93306,238.86,238.86
+1379,Claim processed successfully. No issues found.,Completed,Internal Medicine,Plan C,99214,201.74,201.74
+1380,Claim processed successfully. No issues found.,Completed,Pediatrics,Secondary Plan B,99203,169.75,169.75
+1381,Insurance covered full amount. Great support.,Completed,Cardiology,Plan C,20550,173.78,173.78
+1382,Claim processed and paid completely. Thank you.,Completed,General Practice,Primary Plan A,99203,179.14,179.14
+1383,Payment and documents verified. No errors.,Completed,General Practice,Plan C,20550,244.72,244.72
+1384,Claim processed successfully. No issues found.,Completed,Orthopedics,Secondary Plan B,93306,104.57,104.57
+1385,Thank you! Payment received as expected.,Completed,Cardiology,Secondary Plan B,99214,107.9,107.9
+1386,Excellent service and claim resolution.,Completed,Dermatology,Secondary Plan B,99203,203.12,203.12
+1387,Confirming claim settled with no issues.,Completed,Pediatrics,Plan C,99214,171.75,171.75
+1388,Claim processed successfully. No issues found.,Completed,Dermatology,Secondary Plan B,20550,123.72,123.72
+1389,Claim processed and paid completely. Thank you.,Completed,Internal Medicine,Secondary Plan B,93306,187.05,187.05
+1390,Everything matched. Patient happy with service.,Completed,Internal Medicine,Secondary Plan B,20550,217.66,217.66
+1391,Payment and documents verified. No errors.,Completed,Internal Medicine,Plan C,11721,203.19,203.19
+1392,Claim processed and paid completely. Thank you.,Completed,Internal Medicine,Plan C,93306,236.42,236.42
+1393,Paid in full. Appreciate the prompt settlement.,Completed,Cardiology,Secondary Plan B,11721,226.39,226.39
+1394,Payment and documents verified. No errors.,Completed,General Practice,Primary Plan A,20550,115.91,115.91
+1395,Everything matched. Patient happy with service.,Completed,Pediatrics,Plan C,11721,167.06,167.06
+1396,Insurance covered full amount. Great support.,Completed,Internal Medicine,Plan C,20550,101.39,101.39
+1397,Insurance covered full amount. Great support.,Completed,Cardiology,Secondary Plan B,99214,154.37,154.37
+1398,Everything matched. Patient happy with service.,Completed,Cardiology,Primary Plan A,20550,235.02,235.02
+1399,Claim processed successfully. No issues found.,Completed,Dermatology,Plan C,20550,102.22,102.22
+1400,Insurance covered full amount. Great support.,Completed,Internal Medicine,Plan C,99203,181.77,181.77
+1401,Payment and documents verified. No errors.,Completed,Cardiology,Secondary Plan B,93306,249.95,249.95
+1402,Excellent service and claim resolution.,Completed,Cardiology,Primary Plan A,11721,163.62,163.62
+1403,Confirming claim settled with no issues.,Completed,Dermatology,Primary Plan A,99214,163.71,163.71
+1404,Claim processed successfully. No issues found.,Completed,Pediatrics,Plan C,11721,155.84,155.84
+1405,Claim processed and paid completely. Thank you.,Completed,Internal Medicine,Secondary Plan B,20550,139.17,139.17
+1406,Insurance covered full amount. Great support.,Completed,Pediatrics,Primary Plan A,20550,160.89,160.89
+1407,Everything matched. Patient happy with service.,Completed,Internal Medicine,Plan C,11721,162.32,162.32
+1408,Payment and documents verified. No errors.,Completed,Orthopedics,Secondary Plan B,93306,199.18,199.18
+1409,Claim processed successfully. No issues found.,Completed,Pediatrics,Primary Plan A,20550,223.96,223.96
+1410,Payment and documents verified. No errors.,Completed,General Practice,Plan C,93306,179.83,179.83
+1411,Thank you! Payment received as expected.,Completed,Cardiology,Plan C,11721,103.32,103.32
+1412,Paid in full. Appreciate the prompt settlement.,Completed,Pediatrics,Plan C,99203,159.08,159.08
+1413,Everything matched. Patient happy with service.,Completed,Cardiology,Plan C,11721,162.62,162.62
+1414,Claim processed and paid completely. Thank you.,Completed,Orthopedics,Plan C,93306,159.75,159.75
+1415,Payment and documents verified. No errors.,Completed,Dermatology,Primary Plan A,99214,151.47,151.47
+1416,Insurance covered full amount. Great support.,Completed,Internal Medicine,Primary Plan A,11721,227.64,227.64
+1417,Claim processed and paid completely. Thank you.,Completed,Dermatology,Plan C,20550,188.96,188.96
+1418,Everything matched. Patient happy with service.,Completed,Pediatrics,Primary Plan A,93306,203.4,203.4
+1419,Claim processed successfully. No issues found.,Completed,Orthopedics,Plan C,11721,106.94,106.94
+1420,Thank you! Payment received as expected.,Completed,Cardiology,Secondary Plan B,11721,206.79,206.79
+1421,No discrepancies noted. All looks good.,Completed,Internal Medicine,Plan C,93306,209.07,209.07
+1422,Insurance covered full amount. Great support.,Completed,Cardiology,Plan C,93306,243.86,243.86
+1423,No discrepancies noted. All looks good.,Completed,Orthopedics,Primary Plan A,99203,183.37,183.37
+1424,Excellent service and claim resolution.,Completed,Cardiology,Plan C,99203,192.01,192.01
+1425,Everything matched. Patient happy with service.,Completed,Internal Medicine,Primary Plan A,99214,163.23,163.23
+1426,Insurance covered full amount. Great support.,Completed,General Practice,Plan C,20550,164.07,164.07
+1427,Claim processed successfully. No issues found.,Completed,General Practice,Plan C,11721,216.88,216.88
+1428,No discrepancies noted. All looks good.,Completed,Internal Medicine,Primary Plan A,20550,136.22,136.22
+1429,Payment and documents verified. No errors.,Completed,Orthopedics,Primary Plan A,11721,204.37,204.37
+1430,Confirming claim settled with no issues.,Completed,Cardiology,Plan C,11721,203.73,203.73
+1431,Claim processed and paid completely. Thank you.,Completed,Dermatology,Secondary Plan B,93306,132.63,132.63
+1432,Claim processed successfully. No issues found.,Completed,Internal Medicine,Plan C,99203,229.92,229.92
+1433,Confirming claim settled with no issues.,Completed,Internal Medicine,Secondary Plan B,93306,145.95,145.95
+1434,Paid in full. Appreciate the prompt settlement.,Completed,Orthopedics,Plan C,11721,131.44,131.44
+1435,Thank you! Payment received as expected.,Completed,Dermatology,Secondary Plan B,11721,178.42,178.42
+1436,Claim processed successfully. No issues found.,Completed,Cardiology,Secondary Plan B,20550,129.6,129.6
+1437,Claim processed and paid completely. Thank you.,Completed,Cardiology,Plan C,99203,141.52,141.52
+1438,Claim processed successfully. No issues found.,Completed,Internal Medicine,Plan C,99203,180.95,180.95
+1439,Paid in full. Appreciate the prompt settlement.,Completed,Pediatrics,Secondary Plan B,20550,242.3,242.3
+1440,Claim processed and paid completely. Thank you.,Completed,Pediatrics,Primary Plan A,99214,123.06,123.06
+1441,No discrepancies noted. All looks good.,Completed,Orthopedics,Secondary Plan B,20550,236.72,236.72
+1442,Excellent service and claim resolution.,Completed,Dermatology,Secondary Plan B,11721,212.16,212.16
+1443,Claim processed successfully. No issues found.,Completed,Orthopedics,Primary Plan A,99203,172.34,172.34
+1444,No discrepancies noted. All looks good.,Completed,Cardiology,Plan C,99203,116.92,116.92
+1445,Claim processed successfully. No issues found.,Completed,General Practice,Plan C,20550,183.28,183.28
+1446,No discrepancies noted. All looks good.,Completed,Cardiology,Plan C,20550,212.43,212.43
+1447,Confirming claim settled with no issues.,Completed,Pediatrics,Primary Plan A,20550,170.96,170.96
+1448,Payment and documents verified. No errors.,Completed,Cardiology,Primary Plan A,20550,107.96,107.96
+1449,No discrepancies noted. All looks good.,Completed,Internal Medicine,Secondary Plan B,99203,106.13,106.13
+1450,Paid in full. Appreciate the prompt settlement.,Completed,Dermatology,Secondary Plan B,99214,174.39,174.39
+1451,Insurance covered full amount. Great support.,Completed,Cardiology,Plan C,99214,190.41,190.41
+1452,Claim processed and paid completely. Thank you.,Completed,Pediatrics,Secondary Plan B,99214,165.09,165.09
+1453,Insurance covered full amount. Great support.,Completed,General Practice,Plan C,99214,146.85,146.85
+1454,Thank you! Payment received as expected.,Completed,Internal Medicine,Plan C,20550,239.7,239.7
+1455,Insurance covered full amount. Great support.,Completed,Cardiology,Plan C,11721,155.62,155.62
+1456,Claim processed and paid completely. Thank you.,Completed,Cardiology,Primary Plan A,99214,230.92,230.92
+1457,Confirming claim settled with no issues.,Completed,Internal Medicine,Primary Plan A,99203,228.16,228.16
+1458,Excellent service and claim resolution.,Completed,Orthopedics,Secondary Plan B,93306,123.64,123.64
+1459,Thank you! Payment received as expected.,Completed,Internal Medicine,Primary Plan A,93306,223.61,223.61
+1460,No discrepancies noted. All looks good.,Completed,Orthopedics,Primary Plan A,99203,166.45,166.45
+1461,Confirming claim settled with no issues.,Completed,Cardiology,Plan C,20550,196.96,196.96
+1462,Thank you! Payment received as expected.,Completed,Orthopedics,Secondary Plan B,11721,139.89,139.89
+1463,Thank you! Payment received as expected.,Completed,Pediatrics,Primary Plan A,11721,198.66,198.66
+1464,Excellent service and claim resolution.,Completed,Cardiology,Primary Plan A,20550,131.17,131.17
+1465,Claim processed and paid completely. Thank you.,Completed,Dermatology,Plan C,99203,101.61,101.61
+1466,Thank you! Payment received as expected.,Completed,Pediatrics,Primary Plan A,11721,194.51,194.51
+1467,Thank you! Payment received as expected.,Completed,Internal Medicine,Secondary Plan B,99214,231.83,231.83
+1468,Excellent service and claim resolution.,Completed,General Practice,Plan C,20550,115.34,115.34
+1469,Insurance covered full amount. Great support.,Completed,General Practice,Primary Plan A,99214,183.14,183.14
+1470,Excellent service and claim resolution.,Completed,Cardiology,Primary Plan A,20550,136.84,136.84
+1471,Paid in full. Appreciate the prompt settlement.,Completed,Internal Medicine,Secondary Plan B,99203,157.91,157.91
+1472,Excellent service and claim resolution.,Completed,Orthopedics,Plan C,99203,164.28,164.28
+1473,No discrepancies noted. All looks good.,Completed,Dermatology,Secondary Plan B,20550,104.21,104.21
+1474,Excellent service and claim resolution.,Completed,Pediatrics,Primary Plan A,99203,244.04,244.04
+1475,Insurance covered full amount. Great support.,Completed,Internal Medicine,Plan C,99203,112.08,112.08
+1476,Payment and documents verified. No errors.,Completed,General Practice,Secondary Plan B,99203,222.27,222.27
+1477,Payment and documents verified. No errors.,Completed,Orthopedics,Primary Plan A,93306,206.96,206.96
+1478,Thank you! Payment received as expected.,Completed,Internal Medicine,Secondary Plan B,99214,189.45,189.45
+1479,Confirming claim settled with no issues.,Completed,Pediatrics,Plan C,99214,170.3,170.3
+1480,Excellent service and claim resolution.,Completed,Orthopedics,Primary Plan A,99214,135.24,135.24
+1481,Everything matched. Patient happy with service.,Completed,Internal Medicine,Primary Plan A,99203,111.63,111.63
+1482,No discrepancies noted. All looks good.,Completed,Dermatology,Secondary Plan B,11721,173.91,173.91
+1483,Paid in full. Appreciate the prompt settlement.,Completed,Orthopedics,Secondary Plan B,99203,125.7,125.7
+1484,Excellent service and claim resolution.,Completed,General Practice,Plan C,99214,105.31,105.31
+1485,Everything matched. Patient happy with service.,Completed,Internal Medicine,Primary Plan A,99203,208.27,208.27
+1486,No discrepancies noted. All looks good.,Completed,Orthopedics,Plan C,93306,246.16,246.16
+1487,Thank you! Payment received as expected.,Completed,Cardiology,Secondary Plan B,11721,149.86,149.86
+1488,Everything matched. Patient happy with service.,Completed,Orthopedics,Secondary Plan B,99203,223.88,223.88
+1489,Excellent service and claim resolution.,Completed,Pediatrics,Primary Plan A,20550,166.83,166.83
+1490,Confirming claim settled with no issues.,Completed,General Practice,Plan C,93306,125.61,125.61
+1491,Thank you! Payment received as expected.,Completed,Internal Medicine,Plan C,99214,123.61,123.61
+1492,Claim processed and paid completely. Thank you.,Completed,Pediatrics,Secondary Plan B,99214,124.34,124.34
+1493,Payment and documents verified. No errors.,Completed,General Practice,Primary Plan A,20550,238.19,238.19
+1494,Insurance covered full amount. Great support.,Completed,Internal Medicine,Plan C,20550,237.83,237.83
+1495,No discrepancies noted. All looks good.,Completed,Cardiology,Primary Plan A,11721,228.69,228.69
+1496,Thank you! Payment received as expected.,Completed,Pediatrics,Secondary Plan B,11721,131.27,131.27
+1497,Excellent service and claim resolution.,Completed,Dermatology,Plan C,99214,220.56,220.56
+1498,Everything matched. Patient happy with service.,Completed,Internal Medicine,Secondary Plan B,20550,154.46,154.46
+1499,Thank you! Payment received as expected.,Completed,Pediatrics,Primary Plan A,99214,181.93,181.93
+1500,Payment and documents verified. No errors.,Completed,Orthopedics,Plan C,99214,154.21,154.21
+1501,Insurance covered full amount. Great support.,Completed,Cardiology,Primary Plan A,20550,149.73,149.73
+1502,Paid in full. Appreciate the prompt settlement.,Completed,Internal Medicine,Plan C,11721,160.85,160.85
+1503,Everything matched. Patient happy with service.,Completed,Pediatrics,Plan C,20550,103.75,103.75
+1504,Thank you! Payment received as expected.,Completed,Cardiology,Secondary Plan B,20550,163.71,163.71
+1505,Insurance covered full amount. Great support.,Completed,Internal Medicine,Primary Plan A,11721,224.18,224.18
+1506,Claim processed successfully. No issues found.,Completed,Internal Medicine,Secondary Plan B,99214,131.46,131.46
+1507,Everything matched. Patient happy with service.,Completed,General Practice,Secondary Plan B,11721,106.42,106.42
+1508,Claim processed and paid completely. Thank you.,Completed,Pediatrics,Secondary Plan B,11721,242.86,242.86
+1509,Paid in full. Appreciate the prompt settlement.,Completed,Internal Medicine,Secondary Plan B,11721,106.64,106.64
+1510,Thank you! Payment received as expected.,Completed,General Practice,Secondary Plan B,99214,181.49,181.49
+1511,Claim processed successfully. No issues found.,Completed,General Practice,Plan C,11721,196.6,196.6
+1512,Excellent service and claim resolution.,Completed,Orthopedics,Secondary Plan B,11721,191.25,191.25
+1513,Claim processed and paid completely. Thank you.,Completed,Internal Medicine,Secondary Plan B,20550,203.24,203.24
+1514,Excellent service and claim resolution.,Completed,General Practice,Plan C,93306,146.41,146.41
+1515,Claim processed successfully. No issues found.,Completed,Dermatology,Secondary Plan B,93306,172.16,172.16
+1516,Payment and documents verified. No errors.,Completed,Cardiology,Primary Plan A,93306,124.11,124.11
+1517,Claim processed and paid completely. Thank you.,Completed,General Practice,Secondary Plan B,11721,100.04,100.04
+1518,No discrepancies noted. All looks good.,Completed,General Practice,Secondary Plan B,99203,221.15,221.15
+1519,Claim processed successfully. No issues found.,Completed,Pediatrics,Secondary Plan B,11721,239.96,239.96
+1520,Thank you! Payment received as expected.,Completed,Internal Medicine,Plan C,11721,245.12,245.12
+1521,Everything matched. Patient happy with service.,Completed,Internal Medicine,Primary Plan A,20550,185.3,185.3
+1522,No discrepancies noted. All looks good.,Completed,Internal Medicine,Primary Plan A,99203,195.91,195.91
+1523,Insurance covered full amount. Great support.,Completed,Dermatology,Plan C,93306,116.14,116.14
+1524,Everything matched. Patient happy with service.,Completed,Dermatology,Plan C,11721,129.82,129.82
+1525,Everything matched. Patient happy with service.,Completed,Cardiology,Plan C,11721,137.03,137.03
+1526,Everything matched. Patient happy with service.,Completed,General Practice,Primary Plan A,93306,202.79,202.79
+1527,Thank you! Payment received as expected.,Completed,Internal Medicine,Plan C,93306,111.07,111.07
+1528,Excellent service and claim resolution.,Completed,Orthopedics,Primary Plan A,20550,172.54,172.54
+1529,Claim processed successfully. No issues found.,Completed,Internal Medicine,Secondary Plan B,99203,133.77,133.77
+1530,Claim processed successfully. No issues found.,Completed,Cardiology,Primary Plan A,11721,202.14,202.14
+1531,No discrepancies noted. All looks good.,Completed,Internal Medicine,Plan C,99203,165.57,165.57
+1532,Confirming claim settled with no issues.,Completed,Dermatology,Primary Plan A,20550,132.11,132.11
+1533,Payment and documents verified. No errors.,Completed,Pediatrics,Secondary Plan B,11721,191.28,191.28
+1534,Everything matched. Patient happy with service.,Completed,Internal Medicine,Primary Plan A,93306,158.32,158.32
+1535,Claim processed and paid completely. Thank you.,Completed,Internal Medicine,Plan C,93306,159.82,159.82
+1536,Insurance covered full amount. Great support.,Completed,Dermatology,Primary Plan A,93306,215.76,215.76
+1537,Claim processed successfully. No issues found.,Completed,Pediatrics,Secondary Plan B,20550,185.81,185.81
+1538,Insurance covered full amount. Great support.,Completed,Internal Medicine,Secondary Plan B,11721,135.44,135.44
+1539,Claim processed successfully. No issues found.,Completed,General Practice,Secondary Plan B,99203,188.85,188.85
+1540,Excellent service and claim resolution.,Completed,General Practice,Plan C,93306,175.6,175.6
+1541,Insurance covered full amount. Great support.,Completed,Orthopedics,Primary Plan A,99214,120.2,120.2
+1542,Insurance covered full amount. Great support.,Completed,Cardiology,Primary Plan A,99203,212.1,212.1
+1543,Payment and documents verified. No errors.,Completed,Internal Medicine,Plan C,11721,128.6,128.6
+1544,Paid in full. Appreciate the prompt settlement.,Completed,General Practice,Plan C,99203,149.75,149.75
+1545,Paid in full. Appreciate the prompt settlement.,Completed,Cardiology,Secondary Plan B,20550,168.04,168.04
+1546,Claim processed successfully. No issues found.,Completed,Orthopedics,Primary Plan A,11721,181.99,181.99
+1547,Excellent service and claim resolution.,Completed,General Practice,Plan C,11721,248.62,248.62
+1548,Confirming claim settled with no issues.,Completed,Dermatology,Plan C,93306,237.77,237.77
+1549,Paid in full. Appreciate the prompt settlement.,Completed,Dermatology,Secondary Plan B,99214,164.16,164.16
