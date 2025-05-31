@@ -1,40 +1,67 @@
+import os
+import re
+import nltk
+import warnings
 import pandas as pd
 from transformers import pipeline
 from textblob import TextBlob
 from bertopic import BERTopic
 from sentence_transformers import SentenceTransformer
-import re
-import nltk
-from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+import warnings
+warnings.filterwarnings("ignore", message=".*torch.classes.*")
 
-# Ensure nltk dependencies are available
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
 
-# Initialize NLP components
-sentiment_pipeline = pipeline("sentiment-analysis")
-sentence_model = SentenceTransformer("all-MiniLM-L6-v2")
-topic_model = BERTopic(embedding_model=sentence_model)
+
+# Setup environment (no Streamlit here)
+warnings.filterwarnings('ignore', category=RuntimeWarning)
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
+
+# Download required nltk data
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
+nltk.download('wordnet', quiet=True)
+nltk.download('averaged_perceptron_tagger', quiet=True)
+
+# Initialize NLP tools
+sentiment_pipeline = pipeline(
+    "sentiment-analysis",
+    model="distilbert-base-uncased-finetuned-sst-2-english",
+    device=-1
+)
+
+sentence_model = SentenceTransformer("all-MiniLM-L6-v2", device='cpu')
+
+topic_model = BERTopic(
+    embedding_model=sentence_model,
+    calculate_probabilities=False,
+    verbose=False
+)
 
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words("english"))
 
 
 def preprocess(text):
-    text = re.sub(r"[^\w\s]", "", text)
-    tokens = word_tokenize(text.lower())
+    if not isinstance(text, str):
+        text = str(text)
+    text = text.lower().strip()
+    text = re.sub(r"[^\w\s]", " ", text)
+    text = re.sub(r"\s+", " ", text)
+    tokens = text.split()
     return " ".join(
-        [lemmatizer.lemmatize(token) for token in tokens if token not in stop_words]
+        lemmatizer.lemmatize(token)
+        for token in tokens
+        if token not in stop_words
     )
 
 
 def analyze_claims(df):
     df = df.copy()
 
-    # Preprocess comments
+    # Preprocess
     df["cleaned"] = df["comment"].apply(preprocess)
 
     # Sentiment
@@ -49,7 +76,7 @@ def analyze_claims(df):
     topics, _ = topic_model.fit_transform(df["cleaned"].tolist(), embeddings)
     df["Topic"] = topics
 
-    # Simple category logic (could be replaced with ML classifier)
+    # Rule-based categories
     def auto_category(comment):
         comment = comment.lower()
         if "copay" in comment:

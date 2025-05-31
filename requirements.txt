@@ -18,18 +18,13 @@ textblob>=0.17.1
 nltk>=3.8.1
 
 # Google AI and LangChain
-google-generativeai>=0.3.2
-python-dotenv==1.0.1
-
-# HTML & PDF Generation
-jinja2==3.1.4
-weasyprint==65.1
-pdfkit==1.0.0
-
-# HTML & PDF Reporting
-jinja2==3.1.4
-pdfkit==1.0.0
-
-# .env configuration
-python-dotenv==1.0.1
 google-generativeai==0.3.2
+python-dotenv==1.0.1
+
+# PDF/HTML Reporting
+jinja2==3.1.4
+pdfkit==1.0.0
+
+# Optional: Remove or downgrade if weasyprint causes trouble
+weasyprint==60.2
+torch>=2.6.0
