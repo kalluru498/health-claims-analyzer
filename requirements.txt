@@ -28,7 +28,6 @@ pdfkit==1.0.0
 
 # HTML & PDF Reporting
 jinja2==3.1.4
-weasyprint==60.2  # Note: Requires system dependencies (GTK, Cairo)
 pdfkit==1.0.0
 
 # .env configuration
