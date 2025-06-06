@@ -92,7 +92,7 @@ else:
     st.table(result_df['Topic'].value_counts().reset_index().rename(columns={'index': 'Topic', 'Topic': 'Count'}).head(5))
 
     # --- AI Agent ---
-    st.markdown("## 💬 Ask the AI Agent")
+    st.markdown("## 💬 Ask the AI Agent ")
     question = st.text_input("Ask a question about your claims (e.g., 'Why was this denied?')")
 
     if question:
