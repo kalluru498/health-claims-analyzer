@@ -1,34 +1,74 @@
+import os
 import pandas as pd
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
-import os
 
-class ReportGenerator:
-    def __init__(self, template_dir='templates', output_dir='reports'):
-        self.env = Environment(loader=FileSystemLoader(template_dir))
-        self.template = self.env.get_template('report_template.html')
-        self.output_dir = output_dir
-        os.makedirs(output_dir, exist_ok=True)
+def generate_html_report(df: pd.DataFrame, ai_summary: str = ""):
+    # Setup Jinja environment
+    env = Environment(loader=FileSystemLoader("templates"))
+    template = env.get_template("report_template.html")
 
-    def generate_report(self, df: pd.DataFrame, filename='claim_report'):
-        date_str = datetime.now().strftime('%Y-%m-%d_%H-%M')
-        full_path = os.path.join(self.output_dir, f"{filename}_{date_str}.html")
+    # Prepare stats
+    total_claims = len(df)
 
-        summary = {
-            'total_claims': len(df),
-            'categories': df['Predicted Category'].value_counts().to_dict(),
-            'sentiments': df['Sentiment'].value_counts().to_dict(),
-            'top_topics': df['Topic'].value_counts().head(5).to_dict(),
+    category_counts = df["Predicted Category"].value_counts()
+    sentiment_counts = df["Sentiment"].value_counts()
+
+    category_stats = [
+        {
+            "name": cat,
+            "count": int(count),
+            "pct": round((count / total_claims) * 100, 2)
         }
+        for cat, count in category_counts.items()
+    ]
 
-        html_content = self.template.render(
-            title="Healthcare Claims NLP Report",
-            summary=summary,
-            data=df.head(50).to_dict(orient='records'),
-            date=date_str
-        )
+    sentiment_stats = [
+        {
+            "label": label,
+            "count": int(count),
+            "pct": round((count / total_claims) * 100, 2)
+        }
+        for label, count in sentiment_counts.items()
+    ]
 
-        with open(full_path, 'w', encoding='utf-8') as f:
-            f.write(html_content)
+    # Basic summary fields
+    summary = {
+        "total_claims": len(df),
+        "top_categories": ', '.join(df['Predicted Category'].value_counts().head(3).index),
+        "sentiment_distribution": ', '.join([
+            f"{sentiment}: {count}" for sentiment, count in df["Sentiment"].value_counts().items()
+        ])
+    }
 
-        return full_path
+    # Sample data (ensure required fields exist)
+    sample_records = df.head(30)[["claim_id", "comment", "Predicted Category", "Sentiment"]]
+    samples = [
+        {
+            "claim_id": row["claim_id"],
+            "comment": row["comment"],
+            "category": row["Predicted Category"],
+            "sentiment": row["Sentiment"]
+        }
+        for _, row in sample_records.iterrows()
+    ]
+
+    # Generate report path
+    os.makedirs("reports", exist_ok=True)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_path = f"reports/claims_report_{timestamp}.html"
+
+    # Render the HTML with the template
+    html_content = template.render(
+        summary=summary,
+        category_stats=category_stats,
+        sentiment_stats=sentiment_stats,
+        samples=samples,
+        ai_agent_summary=ai_summary,
+    )
+
+    # Save to file
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(html_content)
+
+    return output_path
