@@ -10,13 +10,6 @@ def setup_environment():
     os.environ['TOKENIZERS_PARALLELISM'] = 'false'
     os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 
-    # Configure Streamlit
-    st.set_page_config(
-        page_title="Claims Intelligence Dashboard",
-        layout="wide",
-        initial_sidebar_state="expanded"
-    )
-
     # Download NLTK data with progress indicator
     with st.spinner("📚 Setting up NLP components..."):
         resources = {
