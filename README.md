@@ -1,149 +1,178 @@
-# Healthcare Claims Intelligence Dashboard
+# 🧠 Healthcare Claims Intelligence Dashboard
 
 ## 📋 Overview
-This project is an advanced healthcare claims analysis system that uses Natural Language Processing (NLP) and Machine Learning to analyze, categorize, and extract insights from healthcare insurance claims data. It features a interactive Streamlit dashboard, automated reporting, and an AI-powered query system.
 
-## 🔧 Technical Stack
-- **Python 3.13+**
-- **Framework:** Streamlit
-- **NLP Libraries:** 
-  - Transformers (BERT)
-  - Sentence-Transformers
-  - BERTopic
-  - NLTK
-  - TextBlob
-- **Data Processing:** Pandas, NumPy
-- **Visualization:** Plotly
-- **Reporting:** Jinja2, WeasyPrint
-- **AI Components:**
-  - Google Generative AI (Gemini Model)
-  - OpenAI GPT
-  - HuggingFace Transformers
+This project is a powerful, end-to-end claims analysis system built using Natural Language Processing (NLP) and Machine Learning. It analyzes healthcare insurance feedback to detect patterns, classify issues, extract sentiment, and surface actionable insights.
 
-## 📁 Project Structure
+It features:
+
+* An interactive Streamlit dashboard
+* AI-powered claim search (via Gemini & GPT)
+* One-click PDF report generation
+
+---
+
+## 🔧 Tech Stack
+
+* **Language:** Python 3.13+
+* **Framework:** Streamlit
+* **NLP & ML:**
+
+  * HuggingFace Transformers (DistilBERT)
+  * Sentence-Transformers
+  * BERTopic (for topic modeling)
+  * TextBlob (for polarity)
+  * NLTK (for preprocessing)
+* **Data & Viz:** Pandas, NumPy, Plotly
+* **AI Integration:** Google Generative AI (Gemini), OpenAI GPT
+* **Reporting:** Jinja2, WeasyPrint
+
+---
+
+## 📁 Folder Structure
+
 ```
 Health_insurance_claims/
-├── app.py                 # Main Streamlit application
-├── pipeline.py           # NLP processing pipeline
-├── gpt_agent.py         # AI query system
-├── data_utils.py        # Data loading and preprocessing
-├── reporting.py         # Report generation
-├── requirements.txt     # Project dependencies
-└── templates/          # HTML templates for reports
-    └── report_template.html
+├── app.py               # Streamlit frontend
+├── pipeline.py          # NLP pipeline
+├── gpt_agent.py         # AI-powered question answering
+├── data_utils.py        # Data cleaning & validation
+├── reporting.py         # Report generator
+├── templates/
+│   └── report_template.html
+└── requirements.txt     # All dependencies
 ```
 
-## 🔍 Component Details
+---
 
-### 1. Data Processing (`data_utils.py`)
-- Handles CSV file loading and validation
-- Performs basic text cleaning and normalization
-- Validates required columns: claim_id, comment, category, specialty, etc.
-- Calculates payment gaps between expected and paid amounts
+## 🧠 Core Components
 
-### 2. NLP Pipeline (`pipeline.py`)
-- **Text Preprocessing:**
-  - Tokenization using NLTK
-  - Stop word removal
-  - Lemmatization
-- **Analysis Components:**
-  - Sentiment Analysis using Hugging Face Transformers
-  - Topic Modeling with BERTopic
-  - Custom category classification
-  - Polarity scoring using TextBlob
+### 1. `data_utils.py`: Data Handling
 
-### 3. AI Query System (`gpt_agent.py`)
-- Implements semantic search using Sentence Transformers
-- Provides natural language interface for querying claims data
-- Uses cosine similarity for finding relevant claims
-- Integrates multiple AI models:
-  - Google Generative AI (Gemini) for advanced reasoning
-  - OpenAI GPT for natural language understanding
-  - BERT-based models for semantic similarity
-- Generates context-aware responses based on similar claims
-- Supports multi-model fallback for reliability
+* Loads and validates CSV files
+* Ensures all required fields (e.g., claim\_id, comment)
+* Computes `amount_gap` (expected - paid)
 
-### 4. Report Generation (`reporting.py`)
-- Generates HTML reports using Jinja2 templates
-- Includes summary statistics and visualizations
-- Supports custom templating and styling
-- Automatically organizes reports by date
+### 2. `pipeline.py`: NLP Engine
 
-### 5. Web Interface (`app.py`)
-- Interactive Streamlit dashboard
-- Features:
-  - CSV file upload and validation
-  - Real-time NLP analysis
-  - Interactive visualizations
-  - AI-powered Q&A system
-  - Report generation and download
+* Cleans, tokenizes, and lemmatizes comments
+* Sentiment detection via DistilBERT (Positive/Negative)
+* Polarity scoring with TextBlob (-1 to +1 scale)
+* Topic Modeling with BERTopic (auto clusters)
+* Rule-based categorization:
 
-## 📊 Analysis Features
-1. **Category Classification:**
-   - Copay Disputes
-   - Duplicate Denials
-   - Policy-based Denials
-   - Payment Issues
-   - COB (Coordination of Benefits)
-   - Others
+  * Copay Disputes
+  * Duplicate Denials
+  * Denied Policies
+  * COB Issues
+  * Payment Gaps
+  * Others
 
-2. **Sentiment Analysis:**
-   - Positive/Negative classification
-   - Polarity scoring
-   - Sentiment distribution visualization
+### 3. `gpt_agent.py`: Ask Your Claims AI
 
-3. **Topic Modeling:**
-   - Automatic topic extraction
-   - Clustering similar claims
-   - Topic distribution analysis
+* Uses semantic search to find related claims
+* Answers natural questions like:
+
+  * “Why was this claim denied?”
+  * “Which CPT code has the most disputes?”
+* Uses Gemini / GPT for contextual response generation
+
+### 4. `reporting.py`: Auto PDF Report Generator
+
+* HTML → PDF via Jinja2 & WeasyPrint
+* Includes summaries, insights, and sample claims
+
+### 5. `app.py`: Streamlit Frontend
+
+* Upload claims CSV
+* View charts, tables, sentiments, topics
+* Ask AI agent
+* Download enriched CSV or PDF reports
+
+---
+
+## 📊 Key Features
+
+### ✅ Classification Tags:
+
+* Copay Disputes
+* Policy Denials
+* Duplicate Denials
+* Underpayments / Missing Payments
+* COB Issues
+
+### 😊 Sentiment Analysis:
+
+* Quickly detect frustration or positive feedback
+* Breakdown by sentiment type
+* See polarity scores
+
+### 🧠 Topic Modeling:
+
+* Auto-extract themes from feedback (e.g., “Billing confusion”)
+* Group claims by topics using semantic similarity
+
+---
 
 ## 🚀 Getting Started
 
-1. **API Setup:**
-   - Get a Google AI API key from Google Cloud Console
-   - Set up your `.env` file with:
-     ```
-     GOOGLE_API_KEY=your_api_key_here
-     OPENAI_API_KEY=your_openai_key_here  # Optional for GPT fallback
-     ```
+### 1. API Setup
 
-2. **Installation:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+Create a `.env` file with:
 
-2. **Running the Application:**
-   ```bash
-   streamlit run app.py
-   ```
+```
+GOOGLE_API_KEY=your_google_key
+OPENAI_API_KEY=your_openai_key  # (optional fallback)
+```
 
-3. **Required Data Format:**
-   CSV file with columns:
-   - claim_id
-   - comment
-   - category
-   - specialty
-   - insurance_type
-   - cpt_code
-   - amount_expected
-   - amount_paid
+### 2. Install Requirements
 
-## 📈 Usage
-1. Upload a claims CSV file through the Streamlit interface
-2. View automated analysis results:
-   - Category distribution
-   - Sentiment analysis
-   - Topic modeling results
-3. Use the AI agent to ask questions about the claims
-4. Generate and download detailed reports
+```bash
+pip install -r requirements.txt
+```
 
-## 🔐 Dependencies
-See `requirements.txt` for complete list of dependencies.
+### 3. Run the App
 
-## 📝 Notes
-- The system requires Python 3.13+ due to specific dependency requirements
-- For PDF report generation, GTK and Cairo system dependencies are required
-- Large datasets may require additional processing time for NLP analysis
+```bash
+streamlit run app.py
+```
+
+### 4. Sample CSV Format
+
+| claim\_id | comment                                | category                | specialty  | insurance\_type | cpt\_code | amount\_expected | amount\_paid |
+| --------- | -------------------------------------- | ----------------------- | ---------- | --------------- | --------- | ---------------- | ------------ |
+| 1001      | Denied due to missing documentation... | Denied - Policy Not Met | Cardiology | Plan A          | 99213     | 150.00           | 0.00         |
+
+---
+
+## 📈 How to Use
+
+1. Upload a claims CSV
+2. View automated analysis:
+
+   * Sentiment
+   * Topics
+   * Categorization
+3. Ask the AI Agent your questions
+4. Download a report with insights
+
+---
+
+## 🔐 Notes
+
+* Requires Python 3.13+
+* For PDF reports, install GTK & Cairo
+* Large datasets may take time during topic modeling
+
+---
 
 ## 🤝 Contributing
-Feel free to submit issues and enhancement requests!
+
+PRs welcome! Raise an issue for bugs, ideas, or suggestions.
+
+---
+
+## 📌 Live App
+
+👉 [Streamlit Demo](https://health-insurance-claims-analyzer.streamlit.app/)
+👉 [GitHub Repository](https://github.com/kalluru498/health-claims-analyzer)
