@@ -76,54 +76,58 @@ else:
 
 
 # --- Comment Column Check ---
-if df is not None:
-    if 'comment' not in df.columns:
-        st.error("❌ CSV must contain a 'comment' column.")
-    else:
-        # Run NLP + topic modeling only if not already done for current data
-        if st.session_state.result_df is None or st.session_state.df_id != hash(df.to_csv()):
-            with st.spinner("🔍 Analyzing comments using NLP and ML..."):
-                st.session_state.result_df = analyze_claims(df)
-                st.session_state.df_id = hash(df.to_csv())
-            st.success("✅ Analysis complete!")
+if df is None:
+    st.warning("⚠️ No data loaded yet.")
+    st.stop()
 
-        result_df = st.session_state.result_df
+if 'comment' not in df.columns:
+    st.error("❌ CSV must contain a 'comment' column named exactly 'comment'.")
+    st.stop()
 
-    # --- Output Display ---
-    st.subheader("📄 Processed Data")
-    st.dataframe(result_df, use_container_width=True)
-    st.download_button("📥 Download Analyzed CSV", result_df.to_csv(index=False), file_name="analyzed_claims.csv")
+    # Run NLP + topic modeling only if not already done for current data
+if st.session_state.result_df is None or st.session_state.df_id != hash(df.to_csv()):
+    with st.spinner("🔍 Analyzing comments using NLP and ML..."):
+        st.session_state.result_df = analyze_claims(df)
+        st.session_state.df_id = hash(df.to_csv())
+    st.success("✅ Analysis complete!")
 
-    st.subheader("📁 Category Distribution")
-    st.bar_chart(result_df['Predicted Category'].value_counts())
+result_df = st.session_state.result_df
+    
+# --- Output Display ---
+st.subheader("📄 Processed Data")
+st.dataframe(result_df, use_container_width=True)
+st.download_button("📥 Download Analyzed CSV", result_df.to_csv(index=False), file_name="analyzed_claims.csv")
 
-    st.subheader("😊 Sentiment Distribution")
-    st.bar_chart(result_df['Sentiment'].value_counts())
+st.subheader("📁 Category Distribution")
+st.bar_chart(result_df['Predicted Category'].value_counts())
 
-    top_topics = (
-        result_df['Topic Label']
-        .value_counts()
-        .reset_index()
-        .rename(columns={'index': 'Topic Description', 'Topic Label': 'Count'})
-    )
+st.subheader("😊 Sentiment Distribution")
+st.bar_chart(result_df['Sentiment'].value_counts())
 
-    st.subheader("🧠 Top Topics")
-    st.table(top_topics.head(20))
+top_topics = (
+    result_df['Topic Label']
+    .value_counts()
+    .reset_index()
+    .rename(columns={'index': 'Topic Description', 'Topic Label': 'Count'})
+)
 
-    # --- AI Agent ---
-    st.markdown("## 💬 Ask the AI Agent ")
-    question = st.text_input("Ask a question about your claims (e.g., 'Why was this denied?')")
+st.subheader("🧠 Top Topics")
+st.table(top_topics.head(20))
 
-    if question:
-        with st.spinner("🧠 Thinking..."):
-            ai_result = gpt_response(result_df, question)
-            st.session_state.ai_response = ai_result
-            st.markdown(f"**📌 Answer:** {ai_result}")
+# --- AI Agent ---
+st.markdown("## 💬 Ask the AI Agent ")
+question = st.text_input("Ask a question about your claims (e.g., 'Why was this denied?')")
 
-    # --- PDF Report ---
-    st.markdown("## 🧾 Generate PDF Report")
-    if st.button("📥 Generate PDF Report"):
-        with st.spinner("Generating report..."):
-            pdf_path = generate_html_report(result_df, ai_summary=st.session_state.ai_response)
-            with open(pdf_path, "rb") as f:
-                st.download_button("📄 Download HTML Report", f, file_name="claims_report.html")
+if question:
+    with st.spinner("🧠 Thinking..."):
+        ai_result = gpt_response(result_df, question)
+        st.session_state.ai_response = ai_result
+        st.markdown(f"**📌 Answer:** {ai_result}")
+
+# --- PDF Report ---
+st.markdown("## 🧾 Generate PDF Report")
+if st.button("📥 Generate PDF Report"):
+    with st.spinner("Generating report..."):
+        pdf_path = generate_html_report(result_df, ai_summary=st.session_state.ai_response)
+        with open(pdf_path, "rb") as f:
+            st.download_button("📄 Download HTML Report", f, file_name="claims_report.html")

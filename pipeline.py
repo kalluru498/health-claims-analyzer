@@ -20,11 +20,15 @@ os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 os.environ['PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION'] = 'python'
 
 # Download required nltk data
+nltk_data_path = os.path.join(os.path.expanduser("~"), "nltk_data")
 nltk.download('punkt', quiet=True)
 nltk.download('stopwords', quiet=True)
 nltk.download('wordnet', quiet=True)
 nltk.download('averaged_perceptron_tagger', quiet=True)
 
+
+# Force NLTK to use the custom path
+nltk.data.path.append(nltk_data_path)
 # Initialize NLP tools
 sentiment_pipeline = pipeline(
     "sentiment-analysis",
