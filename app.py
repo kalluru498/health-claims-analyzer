@@ -52,35 +52,42 @@ st.download_button("⬇ Download Sample CSV", data=sample_df.to_csv(index=False)
 
 st.markdown("---")
 
+# --- Load Data ---
+# --- File Mode Switch ---
+st.subheader("📂 Select Data Source")
+use_sample = st.toggle("🔁 Use Sample Dataset", value=True)
+
 # --- File Upload ---
-st.subheader("📤 Upload Your Claims CSV")
-uploaded_file = st.file_uploader("Upload a CSV file (or use sample above)", type=["csv"])
+uploaded_file = None
+if not use_sample:
+    uploaded_file = st.file_uploader("📤 Upload Your Claims CSV", type=["csv"])
 
 # --- Load Data ---
-# --- Load Data ---
-if uploaded_file and not st.session_state.dataframe_loaded:
+if use_sample:
+    df = pd.read_csv("sample_data_set.csv")
+    st.info("ℹ️ Using sample data.")
+elif uploaded_file:
     df = pd.read_csv(uploaded_file)
-    st.session_state.df = df
-    st.session_state.dataframe_loaded = True
+    st.info("✅ Uploaded data loaded.")
+else:
+    df = None
+    st.warning("⚠️ Please upload a CSV file to continue.")
 
-elif not uploaded_file and not st.session_state.dataframe_loaded:
-    df = sample_df
-    st.session_state.df = df
-    st.session_state.dataframe_loaded = True
-
-df = st.session_state.df
 
 
 # --- Comment Column Check ---
-if 'comment' not in df.columns:
-    st.error("CSV must contain a 'comment' column.")
-else:
-    if st.session_state.result_df is None:
-        with st.spinner("🔍 Analyzing comments using NLP and ML..."):
-            st.session_state.result_df = analyze_claims(df)
-        st.success("✅ Analysis complete!")
+if df is not None:
+    if 'comment' not in df.columns:
+        st.error("❌ CSV must contain a 'comment' column.")
+    else:
+        # Run NLP + topic modeling only if not already done for current data
+        if st.session_state.result_df is None or st.session_state.df_id != hash(df.to_csv()):
+            with st.spinner("🔍 Analyzing comments using NLP and ML..."):
+                st.session_state.result_df = analyze_claims(df)
+                st.session_state.df_id = hash(df.to_csv())
+            st.success("✅ Analysis complete!")
 
-    result_df = st.session_state.result_df
+        result_df = st.session_state.result_df
 
     # --- Output Display ---
     st.subheader("📄 Processed Data")
@@ -101,7 +108,7 @@ else:
     )
 
     st.subheader("🧠 Top Topics")
-    st.table(top_topics.head(10))
+    st.table(top_topics.head(20))
 
     # --- AI Agent ---
     st.markdown("## 💬 Ask the AI Agent ")
