@@ -57,14 +57,19 @@ st.subheader("📤 Upload Your Claims CSV")
 uploaded_file = st.file_uploader("Upload a CSV file (or use sample above)", type=["csv"])
 
 # --- Load Data ---
+# --- Load Data ---
 if uploaded_file and not st.session_state.dataframe_loaded:
     df = pd.read_csv(uploaded_file)
+    st.session_state.df = df
     st.session_state.dataframe_loaded = True
+
 elif not uploaded_file and not st.session_state.dataframe_loaded:
     df = sample_df
+    st.session_state.df = df
     st.session_state.dataframe_loaded = True
-else:
-    df = sample_df if not uploaded_file else pd.read_csv(uploaded_file)
+
+df = st.session_state.df
+
 
 # --- Comment Column Check ---
 if 'comment' not in df.columns:
