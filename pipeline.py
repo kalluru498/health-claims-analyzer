@@ -75,6 +75,23 @@ def analyze_claims(df):
     embeddings = sentence_model.encode(df["cleaned"].tolist())
     topics, _ = topic_model.fit_transform(df["cleaned"].tolist(), embeddings)
     df["Topic"] = topics
+    
+        # Map topic numbers to human-readable labels
+    topic_info = topic_model.get_topic_info()
+    topic_labels = {
+        row["Topic"]: topic_model.get_topic(row["Topic"])
+        for idx, row in topic_info.iterrows()
+        if row["Topic"] != -1
+    }
+
+    def format_topic_label(topic_num):
+        if topic_num in topic_labels:
+            words = [word for word, _ in topic_labels[topic_num][:4]]
+            return f"Topic {topic_num}: " + ", ".join(words)
+        return "Miscellaneous"
+
+    df["Topic Label"] = df["Topic"].apply(format_topic_label)
+
 
     # Rule-based categories
     def auto_category(comment):

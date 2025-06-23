@@ -88,8 +88,15 @@ else:
     st.subheader("😊 Sentiment Distribution")
     st.bar_chart(result_df['Sentiment'].value_counts())
 
+    top_topics = (
+        result_df['Topic Label']
+        .value_counts()
+        .reset_index()
+        .rename(columns={'index': 'Topic Description', 'Topic Label': 'Count'})
+    )
+
     st.subheader("🧠 Top Topics")
-    st.table(result_df['Topic'].value_counts().reset_index().rename(columns={'index': 'Topic', 'Topic': 'Count'}).head(5))
+    st.table(top_topics.head(10))
 
     # --- AI Agent ---
     st.markdown("## 💬 Ask the AI Agent ")
